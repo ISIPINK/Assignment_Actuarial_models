@@ -1,0 +1,37 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2022.9.4)  21 APR 2024 19:13
+entering extended mode
+**main.tex
+(C:\Users\isido\AppData\Local\Programs\MiKTeX\tex/latex/tools\.tex
+LaTeX2e <2022-06-01> patch level 5
+L3 programming layer <2022-07-04> File ignored)
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*\end
+
+*\end
+! Missing \endcsname inserted.
+<to be read again> 
+                   \end/ 
+<*> \end
+        
+? 
+! TeX capacity exceeded, sorry [input stack size=5000].
+\use_ii:nn #1#2->#2
+                   
+<*> \end
+        
+If you really absolutely need more capacity,
+you can ask a wizard to enlarge me.
+
+ 
+Here is how much of TeX's memory you used:
+ 19 strings out of 478359
+ 500 string characters out of 2837306
+ 300950 words of memory out of 3000000
+ 18550 multiletter control sequences out of 15000+600000
+ 469259 words of font info for 28 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 5000i,0n,5001p,89b,10s stack positions out of 5000i,500n,10000p,200000b,80000s
+!  ==> Fatal error occurred, no output PDF file produced!

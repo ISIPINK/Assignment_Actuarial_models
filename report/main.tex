@@ -1,11 +1,58 @@
-\documentclass{article}
+\documentclass[a4paper,12pt]{article}
+
+\setlength{\textwidth}{15.0cm}
+\setlength{\textheight}{24.0cm}
+\setlength{\topmargin}{0cm}
+\setlength{\headsep}{0cm}
+\setlength{\headheight}{0cm}
+\pagestyle{plain}
+
+\usepackage[style=alphabetic,backend=biber]{biblatex} 
+\addbibresource{bibliography.bib}
 
 \usepackage{amsmath, amsfonts, mathtools, amsthm, amssymb}
 \usepackage{import}
 \usepackage{pdfpages}
 \usepackage{transparent}
 \usepackage{xcolor}
+\setlength{\parindent}{0pt}
+
+
+% \renewcommand{\bibfont}{\footnotesize}
+
+
+\title{The use/abuse of copulas in actuarial science and finance}
+\date{}
 
 \begin{document}
-test
+\maketitle
+
+\begin{abstract}
+    This is an assignment for the actuarial models course.
+    The assignment is to summarize \cite{dempster_correlation_2002},
+    \cite{donnelly_devil_nodate} and \cite{frees_understanding_1998}  and discuss the following:
+
+    \begin{itemize}
+        \item  The purpose is to understand the impact of the assumption regarding
+              the dependence structure between risk factors.
+        \item  This is done by means of the concept of copulas.
+        \item  In particular, we study the impact of misused copulas and correlation in the
+              valuation of collateralized debt obligations (CDO’s).
+    \end{itemize}
+
+\end{abstract}
+
+\section{Overview}
+\cite{dempster_correlation_2002} introduces linear dependency, copulas, comonotonicity and rank correlation which
+already are introduced in the course. Also spherical/elliptical distributions and tail dependence are introduced.
+Spherical/elliptical distributions generalize the normal distribution and has good properties for common dependency
+measures.  Tail dependence quantifies dependency in the tails. \cite{dempster_correlation_2002} discusses some
+common dependency fallacies. It also covers simulation of copulas what we also covered in the course.   \\
+
+
+
+
+\newpage
+\printbibliography
+
 \end{document}

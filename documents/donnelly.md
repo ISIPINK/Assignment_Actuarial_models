@@ -5,4 +5,5 @@
 - intro to copulas
 - stuff about modeling CDOs and similar things
 - Inadequate modeling of default clustering (intro tail dependence)
-- stopped @ 5.3
+- simplified model to calculate expected loss to different tranches of CDO
+- 8. A FAILURE OF RISK MANAGEMENT: AIG
