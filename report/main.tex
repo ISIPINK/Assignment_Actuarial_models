@@ -29,15 +29,15 @@
 
 \begin{abstract}
     This is an assignment for the actuarial models course.
-    The assignment is to summarize \cite{dempster_correlation_2002},
-    \cite{donnelly_devil_nodate} and \cite{frees_understanding_1998}  and discuss the following:
+    The assignment is to summarize \cite{dempster_correlation_2002}, \cite{frees_understanding_1998},
+    \cite{donnelly_devil_nodate} and discuss the following:
 
     \begin{itemize}
         \item  The purpose is to understand the impact of the assumption regarding
               the dependence structure between risk factors.
         \item  This is done by means of the concept of copulas.
         \item  In particular, we study the impact of misused copulas and correlation in the
-              valuation of collateralized debt obligations (CDO’s).
+              valuation of collateralized debt obligations (CDO's).
     \end{itemize}
 
 \end{abstract}
@@ -46,10 +46,43 @@
 \cite{dempster_correlation_2002} introduces linear dependency, copulas, comonotonicity and rank correlation which
 already are introduced in the course. Also spherical/elliptical distributions and tail dependence are introduced.
 Spherical/elliptical distributions generalize the normal distribution and has good properties for common dependency
-measures.  Tail dependence quantifies dependency in the tails. \cite{dempster_correlation_2002} discusses some
-common dependency fallacies. It also covers simulation of copulas what we also covered in the course.   \\
+measures.  Tail dependence quantifies dependency in the tails. They also discuss some
+common dependency fallacies and simulation of copulas.\\
 
+\cite{frees_understanding_1998} also introduces copulas, present examples, simulation
+and fitting of copulas. Main examples are joint mortality modeling and modeling insurance company indemnity claims.
+And later also introducing stochastic orders and distortion functions which we also covered in class. \\
 
+\cite{donnelly_devil_nodate} also introduces copulas but mainly talks about $2007-2008$ financial crisis.
+It mainly discusses modeling CDO's/trenching, the impact of not modeling dependence correctly specifically default
+clustering and illustrating with modeling default probability of bonds under identical pairwise correlation
+assumption.
+
+\section{Introduction to new concepts}
+
+\subsection{Spherical/elliptical distributions}
+Spherical/elliptical distributions have a spherical/elliptical symmetry. I.e.
+we can characterize a spherical distributions $X$ as follows:
+\begin{equation}
+    X =_{d} R U
+    .
+\end{equation}
+with $R$ a positive random variable and $U$ independent of $R$ a random vector uniformly distributed on the unit sphere.
+Elliptical distributions can be obtained as affine transformations of spherical distributions. Elliptical distributions
+are fully characterized by their mean, covariance matrix and the characteristic function of normalized $R$
+(normalize such that the mean $=1$) also called generator. So it is a semi-parametric family of distributions with
+limited $1$ dimensional non-parametric random variable.  \\
+
+Here are some obvious properties of elliptical distributions:
+\begin{itemize}
+    \item An affine transformation of an elliptical distribution is also elliptical.
+    \item The sum in the set of elliptical distributions with the same generator is closed.
+    \item Marginal and conditional  distributions of the components of elliptical distributions are elliptical. The intuition
+          for this is the same as for normal distributions, intersection between ellipsoids and planes are also ellipsoids.
+\end{itemize}
+
+In \cite{dempster_correlation_2002} they show that linear portfolios where individual risk together are jointly elliptical
+distributed, risk measures lose structure, simplifying risk management.
 
 
 \newpage
