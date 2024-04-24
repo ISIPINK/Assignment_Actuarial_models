@@ -50,12 +50,15 @@ measures.  Tail dependence quantifies dependency in the tails. They also discuss
 common dependency fallacies and simulation of copulas.\\
 
 \cite{frees_understanding_1998} also introduces copulas, present examples, simulation
-and fitting of copulas. Main examples are joint mortality modeling and modeling insurance company indemnity claims.
+and fitting of copulas. Fitting copulas is done by choosing a parametric model
+guided by non-parametric density estimation and parametric estimation
+with MLE and AIC.
+Main examples are joint mortality modeling and modeling insurance company indemnity claims.
 And later also introducing stochastic orders and distortion functions which we also covered in class. \\
 
 \cite{donnelly_devil_nodate} also introduces copulas but mainly talks about $2007-2008$ financial crisis.
 It mainly discusses modeling CDO's/trenching, the impact of not modeling dependence correctly specifically default
-clustering and illustrating with modeling default probability of bonds under identical pairwise correlation
+clustering illustrating it with modeling default probability of bonds under identical pairwise correlation
 assumption.
 
 \section{Introduction to new concepts}
@@ -129,10 +132,21 @@ I.e. elliptical distributions or normal distribution have no tail dependence and
 unable to approximate dependence of extreme events.
 
 
+\subsection{CDO's}
 
+CDOs, or Collateralized Debt Obligations, are financial tools that pool various debt assets,
+such as mortgages, and repackage them into discrete tranches for investors.
+I.e. a CDO at a trench $t$ running from $s_{t} \rightarrow s_{t+1}$ is
+$S I_{s_{t} \le S \le s_{t+1}}$ with $S = \sum_{i} X_{i}$ and $X_{i}$ the
+individual debt assets. Apart from the moral hazard,  modeling CDO's in particularly
+in senior trenches is hard due to having to model dependence at the tails.
+\cite{donnelly_devil_nodate} underscores the role of inadequate modelling as
+a contributing factor to the financial crisis of $2007-2008$.
 
-
-
+\section{Link with lecture's topics}
+TODO
+\section{Possible applications}
+TODO
 
 
 
