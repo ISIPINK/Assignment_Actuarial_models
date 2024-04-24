@@ -51,10 +51,10 @@ common dependency fallacies and simulation of copulas.\\
 
 \cite{frees_understanding_1998} also introduces copulas, present examples, simulation
 and fitting of copulas. Fitting copulas is done by choosing a parametric model
-guided by non-parametric density estimation and parametric estimation
+guided by non-parametric density estimation and parametric estimation is done
 with MLE and AIC.
 Main examples are joint mortality modeling and modeling insurance company indemnity claims.
-And later also introducing stochastic orders and distortion functions which we also covered in class. \\
+And finally also introducing stochastic orders and distortion functions which we also covered previously. \\
 
 \cite{donnelly_devil_nodate} also introduces copulas but mainly talks about $2007-2008$ financial crisis.
 It mainly discusses modeling CDO's/trenching, the impact of not modeling dependence correctly specifically default
@@ -82,10 +82,10 @@ Here are some obvious properties of elliptical distributions:
     \item An affine transformation of an elliptical distribution is also elliptical.
     \item The sum in the set of elliptical distributions with the same generator is closed.
     \item Marginal and conditional  distributions of the components of elliptical distributions are elliptical. The intuition
-          for this is the same as for normal distributions, intersection between ellipsoids and planes are also ellipsoids.
+          for this is the same as for normal distributions, the intersection between ellipsoids and planes are also ellipsoids.
 \end{itemize}
 
-In \cite{dempster_correlation_2002} they show that for linear portfolios where individual risk together are jointly elliptical
+In \cite{dempster_correlation_2002} they show that linear portfolios where individual risk together are jointly elliptical
 distributed, risk measures lose structure, simplifying risk management tasks. Specifically they show that VaR is equivalent
 to variance risk analysis. This emphasizes that the assumption of elliptical distributions is a strong assumption and
 normal distributions are even stronger.
@@ -102,7 +102,7 @@ The upper tail dependence ($\lambda$) between $X$ and $Y$ is defined as follows:
     \lim_{\alpha \to 1-}  P[ Y > F_{2}^{-1} ( \alpha) \mid X > F_{1}^{-1} ( \alpha) ]=\lambda.
 \end{equation} \\
 When $X$ and $Y$ are continuous distribution we can express this in terms
-of their copula :
+of their copula:
 
 \begin{align}
      & \lim_{\alpha \to 1-}  P[ Y > F_{2}^{-1} ( \alpha) \mid X > F_{1}^{-1} ( \alpha) ]                                          \\
@@ -114,23 +114,8 @@ of their copula :
      & =\lim_{\alpha\to1-} \frac{1-2 \alpha +C(\alpha,\alpha)} {1-\alpha}.
 \end{align}
 
-\cite{dempster_correlation_2002} show different ways to calculate tail dependence. Because
-tail dependence can be expressed in terms of the copula, it is preserved under bijective transformations
-of individual distributions. In the case of elliptical distributions, upper tail dependence
-is $0$ when $\forall t>0 \in \mathbb{R}: P[R>t]>0$ ($R$ is unbounded) and there is no collinearity.
-This can be proven by linearly transforming the marginals to be the same and using
-the fact that the conditional distribution is unbounded converging to $0$.
-
-\begin{align}
-     & \lim_{\alpha \to 1-}  P[ Y > F_{2}^{-1} ( \alpha) \mid X > F_{1}^{-1} ( \alpha) ] \\
-     & =\lim_{\alpha \to 1-}  P[ Y > F^{-1} ( \alpha) \mid X > F^{-1} ( \alpha) ]        \\
-     & =\lim_{z \to \infty}  P[ Y > z  \mid X > z ]                                      \\
-     & = 0
-\end{align}
-
-I.e. elliptical distributions or normal distribution have no tail dependence and are
-unable to approximate dependence of extreme events.
-
+\cite{dempster_correlation_2002} show different ways to calculate tail dependence. They show
+that normal distributions have no tail dependence.
 
 \subsection{CDO's}
 
