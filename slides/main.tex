@@ -1,4 +1,4 @@
-\documentclass[20pt,aspectratio=149]{beamer}
+\documentclass[18pt,aspectratio=149]{beamer}
 \usepackage[]{bookmark}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
@@ -9,13 +9,14 @@
 \usepackage{sansmathaccent}
 \usepackage{graphicx}
 
-\usepackage[style=authoryear,backend=biber]{biblatex}
+\usepackage[style=alphabetic,backend=biber]{biblatex} 
+\addbibresource{bibliography.bib}
 
 \addbibresource{bibliography.bib} 
 \pdfmapfile{+sansmathaccent.map}
 
-\title{title}
-\author{author}
+\title{The use/abuse of copulas in actuarial science and finance}
+\author{Isidoor Pinillo Esquivel}
 \usetheme{Madrid}
 \date{}
 
@@ -24,5 +25,63 @@
 \begin{frame}
     \titlepage
 \end{frame}
+\begin{frame}
+    \frametitle{Overview}
+    \begin{itemize}
+        \item Papers read
+        \item Gaussian copula
+        \item Modelling dependence
+        \item Tools
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Papers read}
+    \begin{itemize}
+        \item \textcite{dempster_correlation_2002}
+        \item \textcite{frees_understanding_1998}
+        \item \textcite{donnelly_devil_nodate}
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{CLT}
+    multivariate clt
+\end{frame}
+
+\begin{frame}
+    \frametitle{Gaussian copula}
+    recap def of copula \\
+    explain that people didnt knew copulas
+\end{frame}
+
+\begin{frame}
+    \frametitle{Modelling dependence $1$}
+    Causal ml \\
+    Modelling with multivariate RVs $\approx$ marginals + copulas, (issues) \\
+    Usually only data and domain knowledge \\
+    Non parametric vs parametric \\
+    data  and computational limitations \\
+    approximate assumptions \\
+    issues at tails \\
+\end{frame}
+
+\begin{frame}
+    \frametitle{Spherical distributions}
+\end{frame}
+
+\begin{frame}
+    \frametitle{tail dependence}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Modelling CDOs}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Conclusion}
+\end{frame}
+
 
 \end{document}
