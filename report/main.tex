@@ -145,9 +145,26 @@ from mathematics to economics and finance:
     \item  offering a relevant and challenging field of research on its own.
 \end{itemize}
 
-The main application of copulas is a theoretical tool for studying dependence.
-Theorems about copulas helps understanding dependence and choosing better assumptions.
-The main example is that Gaussian copulas not always have desirable properties.
+The main application of coplas is a theoretical tool for studying dependence.
+Theorems about copulas help understanding dependence and choosing better assumptions.
+The main example is that Gaussian copulas not always have desirable properties. \\
+
+Copulas can also be used to visualize low dimensional dependence structures of continuous data containing more
+information then any individual dependence measure. We visualize following causal analysis from \url{https://www.pywhy.org/dowhy/main/example_notebooks/gcm_rca_microservice_architecture.html}.
+as an example.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{./copula example/pairplot.png}
+    \caption{
+        This a histogram pairplot of the data. This should capture the pairwise dependence structures in the data
+        but the non-uniform marginals makes it hard to spot independence only obvious dependence structure is
+        comonotonicity.
+
+    }
+    \label{fig:}
+\end{figure}
+
 
 
 \newpage
