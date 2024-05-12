@@ -60,7 +60,11 @@ And finally also introducing stochastic orders and distortion functions which we
 It mainly discusses modeling Collateralized Debt Obligations (CDOs) and trenching, the impact of
 incorrectly modeling dependence, highlighting the consequences of incorrectly modelling default clustering.
 This is illustrated through an example of modeling the default probability of bonds under the assumption
-of identical pairwise correlation.
+of identical pairwise correlation. \\
+
+\cite{lopez-paz_dependence_2016} is a phd thesis we like with a section on copulas. It introduces
+the empirical copula transformation we use later in Figure \ref{fig:pair plot psuedo copula}. \\
+
 
 \section{Introduction to new concepts}
 
@@ -93,10 +97,10 @@ normal distributions are even stronger.
 
 \subsection{Tail dependence}
 Making assumptions is dangerous. Data trades-off with assumptions.
-Determining high dimensional structure requires a lot of data.
+Determining high dimensional structure non-parametrically requires a lot of data.
 Dependence is a high dimensional structure and at
 tails we have little data both by definition. So naturally making
-assumptions about the dependence structure at the tails is a risky business.
+assumptions about the dependence structure at the tails is essential.
 Tail dependence is a way to quantify the dependence in the tails .
 The upper tail dependence ($\lambda$) between $X$ and $Y$ is defined as follows:
 \begin{equation}
@@ -149,23 +153,57 @@ The main application of coplas is a theoretical tool for studying dependence.
 Theorems about copulas help understanding dependence and choosing better assumptions.
 The main example is that Gaussian copulas not always have desirable properties. \\
 
+Direct modelling with copulas is hard as
+fitting high dimensional distributions non-parametrically well, requires a lot of data and may not be
+computationally feasible.  Turning that around means that choosing a good copula
+mediates the lack of data particularly at tails as new samples can be generated from the copula. \\
+
+
 Copulas can also be used to visualize low dimensional dependence structures of continuous data containing more
-information then any individual dependence measure. We visualize following causal analysis from \url{https://www.pywhy.org/dowhy/main/example_notebooks/gcm_rca_microservice_architecture.html}.
-as an example.
+information then any individual dependence measure. Note that visualizing high dimensional dependence is
+intractable and so are dependence measures of $3$ variables as the amount possible triple relations grows
+cubic in dimension. \\
 
-\begin{figure}[h!]
+We visualize following causal analysis from \url{https://www.pywhy.org/dowhy/main/example_notebooks/gcm_rca_microservice_architecture.html}.
+as an example. The data measures latency of a microservice architecture. The data is continuous and non-uniformly distributed making a good
+example. The microservice architecture is known and therefore underlying causal structure between variables:
+
+\begin{figure}[h]
     \centering
-    \includegraphics[width=0.8\textwidth]{./copula example/pairplot.png}
-    \caption{
-        This a histogram pairplot of the data. This should capture the pairwise dependence structures in the data
-        but the non-uniform marginals makes it hard to spot independence only obvious dependence structure is
-        comonotonicity.
-
-    }
-    \label{fig:}
+    \includegraphics[width=\textwidth]{../copula example/microservice_structurejpg.jpg}
+    \caption{Causal DAG for the data.}
+    \label{fig:../copula example/microservice_structurejpg.jpg}
 \end{figure}
 
 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{../copula example/pairplotraw.png}
+    \caption{ This a histogram pairplot of the data. This should capture the pairwise dependence structures in the data
+        but the non-uniform marginals makes it hard to spot independence, the only obvious dependence structure is
+        comonotonicity.}
+    \label{fig:rawpairplot}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{../copula example/robust_correlation.png}
+    \caption{
+        This is a heatmap of the robust correlation matrix of the original data. The columns are sorted
+        using hdbscan.
+    }
+    \label{fig:robust correlation}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{../copula example/psuedocopulapairplot.png}
+    \caption{
+        This is a pair plot of psuedo copula samples (marginals are transformed by their sampled emperical cdf).
+        Here independence is easily spotted.
+    }
+    \label{fig:pair plot psuedo copula}
+\end{figure}
 
 \newpage
 \printbibliography
