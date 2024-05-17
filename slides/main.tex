@@ -28,51 +28,108 @@
 \begin{frame}
     \frametitle{Overview}
     \begin{itemize}
-        \item Papers read
-        \item Gaussian copula
+        \item Literature overview
         \item Modelling dependence
+        \item Copulas
         \item Tools
     \end{itemize}
 \end{frame}
 
 \begin{frame}
-    \frametitle{Papers read}
+    \frametitle{Papers}
     \begin{itemize}
-        \item \textcite{dempster_correlation_2002}
-        \item \textcite{frees_understanding_1998}
-        \item \textcite{donnelly_devil_nodate}
+        \item \citetitle{dempster_correlation_2002},\\ \textcite{dempster_correlation_2002}
+        \item \citetitle{frees_understanding_1998},\\ \textcite{frees_understanding_1998}
+        \item \citetitle{donnelly_devil_nodate},\\ \textcite{donnelly_devil_nodate}
+        \item \citetitle{lopez-paz_dependence_2016},\\ \textcite{lopez-paz_dependence_2016}
     \end{itemize}
 
 \end{frame}
 
 \begin{frame}
-    \frametitle{CLT}
-    multivariate clt
+    \frametitle{Favorite course on yt with a section on dependence}
+    \begin{center}
+        \includegraphics[width=0.7\textwidth]{graphical models yt.jpg}
+    \end{center}
 \end{frame}
 
 \begin{frame}
-    \frametitle{Gaussian copula}
-    recap def of copula \\
-    explain that people didnt knew copulas
+    \frametitle{Dependence}
+    \begin{center}
+        \includegraphics[width=0.8\textwidth]{Ladder-1.png}
+    \end{center}
 \end{frame}
 
 \begin{frame}
     \frametitle{Modelling dependence $1$}
-    Causal ml \\
-    Modelling with multivariate RVs $\approx$ marginals + copulas, (issues) \\
-    Usually only data and domain knowledge \\
-    Non parametric vs parametric \\
-    data  and computational limitations \\
-    approximate assumptions \\
-    issues at tails \\
+    \begin{itemize}
+        \item Modelling with multivariate RVs $\rightarrow$ density estimation
+        \item Usually only data and domain knowledge
+        \item Non-parametric vs parametric
+        \item Data and computational limitations
+        \item Approximate assumptions
+        \item Issues at tails
+        \item Marginals + copulas
+    \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+    \frametitle{Multivariate CLT}
+    \begin{center}
+        \includegraphics[width=0.9\textwidth]{CLT.jpg}
+        \includegraphics[width=0.9\textwidth]{CLT2.jpg}
+    \end{center}
 \end{frame}
 
 \begin{frame}
-    \frametitle{Spherical distributions}
+    \frametitle{Gaussian copula}
+    Sklar's theorem $\rightarrow$ transform the marginals to uniforms \\
+    Same amount parameters as the Gaussian distribution \\
+    No parametric assumption on marginals compared to assuming Gaussian
+
+    \begin{center}
+        \includegraphics[width=\textwidth]{gaussian_copula.png}
+    \end{center}
+
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Spherical/elliptical distributions 1}
+    Spherical distributions have a spherical/elliptical symmetry or\\
+    \begin{equation}
+        X =_{d} R U
+        .
+    \end{equation}
+    with $R>0,U\perp\!\!\!\perp R$ uniform on unit sphere. \\
+    \pause
+
+    Elliptical distributions $=$ affine transformations of spherical distributions. \\
+    \pause
+    Parametrized by mean, covariance matrix and $R$. \\
+    Semi-parametric multivariate distributions
 \end{frame}
 
 \begin{frame}
-    \frametitle{tail dependence}
+    \frametitle{Spherical/elliptical distributions 2}
+    The intersection between ellipsoids and planes are also ellipsoids similar:
+    \pause
+    \begin{itemize}
+        \item An affine transformation of an elliptical distribution is also elliptical.
+        \item The sum in the set of elliptical distributions with the same generator is closed.
+        \item Marginal and conditional  distributions of the components of elliptical distributions are elliptical.
+    \end{itemize}
+    \pause
+    \vspace{0.5cm}
+    In \cite{dempster_correlation_2002} they show that linear portfolios where individual risk together are jointly elliptical
+    distributed, \textbf{risk measures lose structure}, simplifying risk management tasks. Specifically they show that VaR is equivalent
+    to variance risk analysis.
+\end{frame}
+
+\begin{frame}
+    \frametitle{Tail dependence}
 \end{frame}
 
 \begin{frame}
