@@ -32,6 +32,7 @@
         \item Modelling dependence
         \item Copulas
         \item Tools
+        \item Conclusion
     \end{itemize}
 \end{frame}
 
@@ -129,12 +130,90 @@
 \end{frame}
 
 \begin{frame}
-    \frametitle{Tail dependence}
+    \frametitle{Tail dependence 1}
+    Tail dependence $\approx$ dependence in the tails .
+    The upper tail dependence ($\lambda$) between $X$ and $Y$ is defined as follows:
+    \begin{equation}
+        \lim_{\alpha \to 1-}  P[ Y > F_{Y}^{-1} ( \alpha)
+                \mid X > F_{X}^{-1} ( \alpha) ]=\lambda.
+    \end{equation}
+    \pause
+
+    \cite{dempster_correlation_2002} show different ways to calculate tail dependence. They show
+    that normal distributions have no tail dependence.
+\end{frame}
+
+\begin{frame}
+    \frametitle{Tail dependence 2}
+    When $X$ and $Y$ are continuous distribution we can express this in terms
+    of their copula:
+    \vspace{-0.5cm}
+    {\small
+        \begin{align}
+             & \lim_{\alpha \to 1-}  P[ Y > F_{Y}^{-1} ( \alpha) \mid X > F_{X}^{-1} ( \alpha) ]                                          \\
+             & =\lim_{\alpha \to 1-}  P[ U_{2} >  \alpha \mid U_{1} >  \alpha ]                                                           \\
+             & =\lim_{\alpha \to 1-}  \frac{P[U_{1}>\alpha,U_{2}>\alpha]}{P[U_{1}>\alpha]}                                                \\
+             & =\lim_{\alpha \to 1-}  \frac{1 - P[(U_{1}>\alpha,U_{2}>\alpha)^{c}]}{1-\alpha}                                             \\
+             & =\lim_{\alpha \to 1-}  \frac{1 - P[(U_{1}\le \alpha) \cup ( U_{2}\le\alpha)]}{1-\alpha}                                    \\
+             & =\lim_{\alpha \to 1-}  \frac{1 - P[U_{1}\le \alpha] - P[U_{2}\le \alpha]  + P[U_{1}\le \alpha , U_{2}\le\alpha]}{1-\alpha} \\
+             & =\lim_{\alpha\to1-} \frac{1-2 \alpha +C(\alpha,\alpha)} {1-\alpha}.
+        \end{align}
+    }
+
 \end{frame}
 
 \begin{frame}
     \frametitle{Modelling CDOs}
+    \begin{center}
+        \begin{tikzpicture}
+            \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=0.7\textwidth]{cdo_ picture.png}};
+            \pause
+            \draw[<-, thick, red, shorten >=5pt] (10,5.5) -- (10,1) node[above, pos=0] {\scriptsize Modelling Risk};
+        \end{tikzpicture}
+    \end{center}
 \end{frame}
+
+\begin{frame}
+    \frametitle{Visualizing with copulas $1$}
+    \begin{center}
+        \includegraphics[width=0.9\textwidth]{microservice_structurejpg.jpg}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Visualizing with copulas $2$}
+    \begin{center}
+        \includegraphics[height=0.8\textheight]{pairplotraw.png}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Visualizing with copulas $3$}
+    \begin{center}
+        \includegraphics[height=0.8\textheight]{robust_correlation.png}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Visualizing with copulas $4$}
+    \begin{center}
+        \includegraphics[height=0.8\textheight]{psuedocopulapairplot.png}
+    \end{center}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Copula cons}
+    \begin{itemize}
+        \item Reliant on parameteric assumptions in high dimensions
+        \item Copulas don't always retain smoothness/other properties
+        \item Difficulties with multimode distributions
+        \item Density estimation (breaking Vapnik's principle)
+        \item High dimensional dependence is unintuitive and complicated
+    \end{itemize}
+\end{frame}
+
+
 
 \begin{frame}
     \frametitle{Conclusion}
